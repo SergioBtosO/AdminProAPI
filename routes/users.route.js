@@ -14,8 +14,8 @@ router.get('/',validatorJWT, getUsers);
 
 router.post('/', [
     validatorJWT,
-    check('nameUser', 'Nombre requerido!').not().isEmpty(),
-    check('lastNameUser', 'Apellido requerido!').not().isEmpty(),
+    check('name', 'Nombre requerido!').not().isEmpty(),
+    check('lastName', 'Apellido requerido!').not().isEmpty(),
     check('typeDocument', 'Tipo Documento requerido!').not().isEmpty(),
     check('numberDocument', 'Numero Documento requerido!').not().isEmpty(),
     check('password', 'Contraseña requerido!').not().isEmpty(),
@@ -24,8 +24,8 @@ router.post('/', [
 
 router.put('/:id', [
     validatorJWT,
-    check('nameUser', 'Nombre requerido!').not().isEmpty(),
-    check('lastNameUser', 'Apellido requerido!').not().isEmpty(),
+    check('name', 'Nombre requerido!').not().isEmpty(),
+    check('lastName', 'Apellido requerido!').not().isEmpty(),
     check('typeDocument', 'Tipo Documento requerido!').not().isEmpty(),
     check('numberDocument', 'Numero Documento requerido!').not().isEmpty(),
     check('role', 'Rol requerido!').not().isEmpty(),

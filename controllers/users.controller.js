@@ -76,7 +76,7 @@ const deleteUser = async (req, res = response) => {
 
         const existUser = await User.findById(id)
 
-        if (existUser) {
+        if (!existUser) {
             return res.status(404).json({ ok: false, msg: `No existe usuario con el id: ${id} !` })
         }
 

@@ -2,11 +2,11 @@ const { Schema, model } = require('mongoose');
 
 const UserSchema = Schema({
 
-    nameUser: {
+    name: {
         type: String,
         required: true,
     },
-    lastNameUser: {
+    lastName: {
         type: String,
         required: true,
     },
@@ -35,6 +35,9 @@ const UserSchema = Schema({
         type: String,
         required: true,
         default: 'USER_ROLE'
+    },
+    costCenter:{
+        type: String,
     }
 });
 

@@ -45,6 +45,7 @@ UserSchema.method('toJSON', function () {
     const { __v, _id, password, ...object } = this.toObject();
     object.id = _id;
     object.version = __v;
+    
     return object;
 })
 

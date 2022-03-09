@@ -13,15 +13,16 @@ app.use(express.json())
 
 dbConnection();
 
-app.use('/api/users',require('./routes/users.route'));
-app.use('/api/login',require('./routes/auth.route'));
-app.use('/api/projects',require('./routes/projects.route'));
-app.use('/api/cost-centers',require('./routes/cost-centers.route'));
-app.use('/api/time-records',require('./routes/time-records.route'));
+app.use('/api/users', require('./routes/users.route'));
+app.use('/api/login', require('./routes/auth.route'));
+app.use('/api/projects', require('./routes/projects.route'));
+app.use('/api/cost-centers', require('./routes/cost-centers.route'));
+app.use('/api/time-records', require('./routes/time-records.route'));
+app.use('/api/uploads', require('./routes/uploads.route'));
 
 
-app.use('/api',(req, res) => {
-    res.json({ok: true, message:'Admin Pro API ok!'})
+app.use('/api', (req, res) => {
+    res.json({ ok: true, message: 'Admin Pro API ok!' })
 })
 
 

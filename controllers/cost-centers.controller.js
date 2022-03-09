@@ -4,9 +4,18 @@ const CostCenter = require('./../models/cost-center.model')
 
 const getCostCenters = async (req, res) => {
 
+    const from = Number(req.query.from) || 0;
+
     const costCenter = await CostCenter.find();
 
-    res.json({ ok: true, costCenter });
+    const [ costCenters, total ] = await Promise.all([
+        CostCenter.find({}, 'code name description status id')
+            .skip( from )
+            .limit( 5 ),
+            CostCenter.countDocuments()
+    ]);
+
+    res.json({ ok: true, costCenters,total });
 }
 
 const createCostCenter = async (req, res = response) => {
